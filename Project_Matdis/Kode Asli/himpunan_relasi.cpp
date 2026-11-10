@@ -29,7 +29,12 @@ int main(){
             cout << ",";
         }
     }
-    cout << "}";
+    cout << "}" << endl << endl;
+
+    // Kode untuk menentukan sifat relasi himpunan
+    cout << "Sifat relasi yang ingin dihasilkan: ";
+    string sifatRelasi;
+    cin >> sifatRelasi;
 
     return 0;
 }
