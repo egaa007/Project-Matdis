@@ -1,0 +1,47 @@
+coba menghantar masih manual
+tipe datanya make array 2 dimensi
+
+// kode bool
+Mendeklarasikan variabel penanda (flag) bertipe boolean dengan asumsi awal bernilai true (artinya relasi sementara dianggap bersifat menghantar sebelum terbukti sebaliknya).
+
+// kode Pencarian Posisi Indeks Himpunan
+C++
+        int u = -1, v = -1;
+        for (int i = 0; i < n; i++) {
+            if (himpunan[i] == a) u = i;
+            if (himpunan[i] == b) v = i;
+        }
+Mendeklarasikan variabel indeks u dan v dengan nilai awal -1. Perulangan di dalamnya mencocokkan nilai string a dan b dengan anggota yang ada di dalam array himpunan utama Anda untuk mendapatkan posisi indeks numeriknya.
+
+
+// kode penandaan matrix relasi
+kode
+        if (u != -1 && v != -1) r[u][v] = 1;
+    }
+Jika kedua elemen ditemukan di dalam himpunan (artinya u dan v bukan -1), sel matriks pada posisi r[u][v] diubah nilainya menjadi 1. Nilai 1 ini menandakan bahwa ada relasi dari elemen ke-u ke elemen ke-v. Kurung kurawal tutup } terakhir menutup perulangan penginputan pasangan relasi.
+
+
+// algoritma pengecekan transitif
+C++
+    for (int i = 0; i < n && menghantar; i++) {
+        for (int j = 0; j < n && menghantar; j++) {
+            for (int k = 0; k < n && menghantar; k++) {
+Menggunakan tiga perulangan bersarang (nested loops) untuk menguji setiap kombinasi elemen i, j, dan k di dalam himpunan. Syarat tambahan && menghantar membuat loop otomatis berhenti lebih awal jika sifat menghantarnya sudah terbukti gagal, sehingga lebih efisien.
+
+// inti logika transitif
+if (r[i][j] && r[j][k] && !r[i][k]) {
+                    menghantar = false;
+                }
+            }
+        }
+    }
+Logika matematika transitif: Jika ada relasi dari i ke j (r[i][j] == 1) DAN ada relasi dari j ke k (r[j][k] == 1), tetapi TIDAK ADA relasi langsung dari i ke k (!r[i][k]), maka sifat menghantar gugur.
+
+menghantar = false;: Status diubah menjadi false karena syarat transitifnya dilanggar.
+
+// kode tampilan akhir
+cout << "\nHasil: Relasi " << (menghantar ? "BERSIFAT" : "TIDAK BERSIFAT") << " Menghantar (Transitif)." << endl;
+}
+Mencetak hasil akhir ke layar. Operator ternary (menghantar ? "BERSIFAT" : "TIDAK BERSIFAT") akan mencetak kata "BERSIFAT" jika variabel bernilai true, atau "TIDAK BERSIFAT" jika bernilai false.
+
+Kurung kurawal tutup } yang paling bawah menutup blok percabangan if (sifatRelasi == ...) di awal.
